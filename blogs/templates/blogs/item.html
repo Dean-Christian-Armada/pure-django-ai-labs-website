@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_content %}
+	{% include 'blogs/nav.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="blogs" class="container form-horizontal">
+	<div class="form-group">
+		<div class="col-lg-offset-1 col-lg-2 text-right">
+			<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
+		</div>
+		<div class="col-lg-8 blog-content">
+			<h1>{{ item.title }}</h1>
+			<h4><i>{% if item.author %} By: {{ item.author }} {% endif %}</i></h4>
+			<!-- <h4><i>Date: {{ item.date_published|date }}</i></h4> -->
+			<img src="/media/{{ item.photo }}">
+			<h4>
+				{{ item.content|safe }}
+			</h4>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer_content %}
+	{% include 'blogs/footer.html' %}
+{% endblock %}

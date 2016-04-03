@@ -1,0 +1,515 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('/static/css/fonts/raleway/Raleway-Regular.ttf');
+}
+@font-face {
+    font-family: 'Raleway-bold';
+    src: url('/static/css/fonts/raleway/Raleway-Regular.ttf');
+}
+@font-face {
+    font-family: 'Raleway-extra-bold';
+    src: url('/static/css/fonts/raleway/Raleway-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'Raleway-extra-light';
+    src: url('/static/css/fonts/raleway/Raleway-ExtraLight.ttf');
+}
+@font-face {
+    font-family: 'Raleway-heavy';
+    src: url('/static/css/fonts/raleway/Raleway-Heavy.ttf');
+}
+@font-face {
+    font-family: 'Raleway-light';
+    src: url('/static/css/fonts/raleway/Raleway-Light.ttf');
+}
+@font-face {
+    font-family: 'Raleway-medium';
+    src: url('/static/css/fonts/raleway/Raleway-Medium.ttf');
+}
+@font-face {
+    font-family: 'Raleway-semibold';
+    src: url('/static/css/fonts/raleway/Raleway-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Raleway-thin';
+    src: url('/static/css/fonts/raleway/Raleway-Thin.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-bold';
+    src: url('/static/css/fonts/montserrat/Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url('/static/css/fonts/montserrat/Montserrat-Regular.ttf');
+}
+
+body {
+	font-family: 'Raleway-regular';
+}
+header {
+	background-color: #ffffff;
+}
+section.blue-section {
+	background-color: #0072bc;
+}
+section.dark-blue-section-01 {
+	background-color: #04012f;
+}
+section.lighter-blue-section-01 {
+	background-color: #b5e7fa;
+}
+section.lighter-blue-section-02 {
+	background-color: #00aeef;
+}
+section.ai-homes-bg {
+	background-color: #2d3842;
+	background-image: url("/static/images/ai_homes_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 622px;
+    width: 100%;
+}
+section.consulting-bg {
+	background-color: #3d85b4;
+	background-image: url("/static/images/consulting_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 638px;
+    width: 100%;
+}
+.uk-margin-custom-slarge-top {
+	margin-top: 80px;
+}
+.uk-margin-custom-slarge-bottom {
+	margin-bottom: 80px;
+}
+.uk-margin-custom-large-top {
+	margin-top: 125px;
+}
+.uk-margin-custom-top {
+	margin-top: 25px;
+}
+a.nav-span {
+	font-family: 'Raleway';
+	font-weight: bold;
+	font-size: 15px;
+	padding: 10px 15px;
+}
+a.nav-span:hover {
+	text-decoration: none;
+}
+p.header-text {
+	color: #00aeef;
+	font-family: 'Montserrat-bold';
+	font-size: 14px;
+}
+p.header-content-text {
+	color: #93a7ae;
+	font-family: 'Raleway';
+	font-size: 16px;
+}
+p.auto-content-text {
+	color: #72b8d5;
+	font-family: 'Raleway';
+	font-size: 14.5px;
+	line-height: 35px;
+}
+p.copyright-text {
+	color: #2d3842;
+	font-family: 'Raleway';
+	font-size: 16px;
+}
+/* Text */
+.uk-transparent {
+    background-color: #000;
+    border-radius: 3px;
+    box-shadow: 3px 5px 5px #555;
+    opacity: 0.75;
+    padding: 10px 20px;
+    filter: Alpha(opacity=75); /* IE8 and earlier */
+    display: block;
+}
+h1.title-white {
+	color: #ffffff;
+	font-family: 'Montserrat-bold';
+	font-size: 30px;
+	text-shadow: 1px 3px 5px #222;
+}
+p.slider-text {
+	color: #ffffff;
+	font-family: 'Raleway-extra-light';
+	font-size: 16px;
+	line-height: 5px;
+}
+h2.title-white {
+	color: #ffffff;
+	font-family: 'Montserrat-bold';
+	font-size: 45px;
+}
+h2.title-grey {
+	color: #a9afb8;
+	font-family: 'Montserrat-bold';
+	font-size: 36px;
+}
+h2.title-blue {
+	color: #00aeef;
+	font-family: 'Montserrat-bold';
+	font-size: 47px;
+}
+h3.title-white {
+	color: #ffffff;
+	font-family: 'Montserrat-bold';
+	font-size: 35px;
+	line-height: 35px;
+}
+h5.title-blue {
+	color: #00aeef;
+	font-family: 'Montserrat-bold';
+	font-size: 24px;
+	line-height: 35px;
+}
+p.column-text {
+	color: #ffffff;
+	font-family: 'Raleway';
+	font-size: 14px;
+}
+p.default-text {
+	color: #ffffff;
+	font-family: 'Raleway';
+	font-size: 14.5px;
+}
+p.consulting-text {
+	color: #ffffff;
+	font-family: 'Raleway';
+	font-size: 14.5px;
+	line-height: 40px;
+	margin-bottom: 50px;
+}
+p.contact-content-text {
+	color: #00aeef;
+	font-family: 'Raleway';
+	font-size: 17px;
+}
+nav.uk-navbar {
+	background-color: #ffffff;
+    border: 0px;
+    margin-top: 23px;
+}
+nav.uk-navbar ul li a {
+	font-family: 'Montserrat-bold';
+    font-size: 14px;
+    color: #097da9;
+}
+nav.uk-navbar ul li a:hover {
+	background-color: #b5e7fa!important;
+}
+nav.uk-navbar ul li a.active {
+	background-color: #00aeef!important;
+	font-family: 'Montserrat-bold';
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 0px!important;
+    border: 0px;
+}
+nav.uk-navbar ul li a:active {
+	background-color: #00aeef!important;
+	font-family: 'Montserrat-bold';
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 0px!important;
+    border: 0px;
+}
+nav.uk-navbar ul li a:focus {
+	background-color: #00aeef!important;
+	font-family: 'Montserrat-bold';
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 0px!important;
+    border: 0px;
+}
+div#contactus input {
+	border: 1px solid #27b7f1;
+	color: #27b7f1!important;
+	font-family: 'Raleway';
+	font-size: 16px;
+}
+div#contactus textarea {
+	border: 1px solid #27b7f1;
+	border-radius: 3px;
+	color: #27b7f1!important;
+	font-family: 'Raleway';
+	font-size: 16px;
+	height: 100px;
+}
+div#contactus .button {
+	background-color: #69cef4;
+    border: 1px solid #27b7f1;
+    color: #ffffff!important;
+    font-family: 'Raleway';
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 35px;
+}
+.margin-custom-top { margin-top: 80px; }
+.circle-wrapper { 
+	position: relative; 
+}
+.circle-wrapper img { 
+	position: absolute;
+    top: -30px;
+}
+.uk-notify-message {
+	font-family: 'Raleway-extra-light';
+	font-size: 14px;
+}
+img.ailogo {
+	margin-top: 5px;
+}
+.social-wrapper { padding: 10px; }
+input.uk-form-large:not([type]), input.uk-form-large[type], select.uk-form-large, textarea.uk-form-large {
+	height: 35px;
+}
+.margin-top-custom {
+	margin-top: 20px;
+}
+.margin-bottom-custom {
+	margin-bottom: 20px;
+}
+.margin-left-custome { margin-left: 50px; }
+.uk-slidenav-position .uk-slidenav-previous { left: 5px; }
+.uk-slidenav-position .uk-slidenav-next { right: 5px; }
+
+/* SLIDER */
+.slider1 {
+width: 100%; height: 600px; background-size: 100% auto; background-position: 100% 65%; background-repeat: no-repeat;
+}
+.slider2 {
+width: 100%; height: 600px; background-size: 100% 100%; background-position: 100% 100%; background-repeat: no-repeat;
+}
+.slider3 {
+width: 100%; height: 600px; background-size: 100% 100%; background-position: 100% 100%; background-repeat: no-repeat;
+}
+/* iPhone, etc portrait ---- */
+@media only screen and (min-width: 320px) {
+	nav#navLong { display: none; }
+	div#navShort { margin-top: 0px; }
+	nav#navShortHumb { margin-top: 0px; }
+	nav#navShortHumb a.uk-accordion-title {
+		background-color: #fff;
+		float: right;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	img.ailogo {
+		margin-top: 5px;
+		max-width: 90px;
+	}
+	.uk-accordion-content {
+		background-color: #fff;
+	    border: 0 none;
+	    border-radius: 0;
+	    color: #097da9;
+	    float: left;
+	    font-family: "Montserrat-bold";
+	    font-size: 13px;
+	    margin-top: 0;
+	    text-align: right;
+	    width: 100%;
+	}
+	h1.title-white {
+		color: #ffffff;
+	    font-family: "Montserrat-bold";
+	    font-size: 16px;
+	    line-height: 0;
+	    text-shadow: 1px 3px 5px #222;
+	}
+	p.slider-text {
+		color: #ffffff;
+		font-family: 'Raleway-extra-light';
+		font-size: 12px;
+		line-height: 0;
+	}
+	.margin-left-custome {     
+		bottom: -15px;
+	    margin-left: 0px;
+	    position: absolute;
+	}
+	.uk-slidenav-position .uk-slidenav-previous { left: 0px; }
+	.uk-slidenav-position .uk-slidenav-next { right: 0px; }
+
+	h2.title-grey {
+	    color: #a9afb8;
+	    font-family: "Montserrat-bold";
+	    font-size: 20px;
+	}
+	h2.title-white {
+	    color: #ffffff;
+	    font-family: "Montserrat-bold";
+	    font-size: 25px;
+	}
+	h3.title-white {
+	    color: #ffffff;
+	    font-family: "Montserrat-bold";
+	    font-size: 25px;
+	    line-height: 35px;
+	}
+	h2.title-blue {
+	    color: #00aeef;
+	    font-family: "Montserrat-bold";
+	    font-size: 25px;
+	}
+
+	div#autoresize-ha.uk-width-6-10 {
+		width: 90%;
+	}
+	div#autoresize-sl.uk-width-6-10 {
+		width: 90%;
+	}
+	div#autoresize-ct.uk-width-7-10 {
+		width: 90%;
+	}
+	p.auto-content-text {
+	    color: #72b8d5;
+	    font-family: "Raleway";
+	    font-size: 13px;
+	    line-height: 19px;
+	}
+	p.consulting-text {
+	    color: #ffffff;
+	    font-family: "Raleway";
+	    font-size: 13px;
+	    line-height: 19px;
+	    margin-bottom: 50px;
+	}
+	p.column-text {
+	    color: #ffffff;
+	    font-family: "Raleway";
+	    font-size: 13px;
+	}
+	.footerMenu { display: none; }
+	.uk-transparent { display: none; }
+
+}
+@media only screen and (min-width: 1200px) {
+	nav#navLong { display: block; }
+	div#navShort { display: none; }
+	img.ailogo {
+		max-width: 100%;
+	}	
+	h1.title-white {
+		color: #ffffff;
+		font-family: 'Montserrat-bold';
+		font-size: 30px;
+		text-shadow: 1px 3px 5px #222;
+		line-height: 50px;
+	}
+	p.slider-text {
+		color: #ffffff;
+		font-family: 'Raleway-extra-light';
+		font-size: 16px;
+		line-height: 5px;
+	}
+	.margin-left-custome {     
+		bottom: 100px;
+	    margin-left: 50px;
+	    position: relative;
+	}
+	h2.title-grey {
+		color: #a9afb8;
+		font-family: 'Montserrat-bold';
+		font-size: 36px;
+	}
+	h2.title-white {
+		color: #ffffff;
+		font-family: 'Montserrat-bold';
+		font-size: 45px;
+	}
+	h3.title-white {
+		color: #ffffff;
+		font-family: 'Montserrat-bold';
+		font-size: 35px;
+		line-height: 35px;
+	}
+	h2.title-blue {
+		color: #00aeef;
+		font-family: 'Montserrat-bold';
+		font-size: 47px;
+	}
+	div#autoresize-ha.uk-width-6-10 {
+		width: 60%;
+	}
+	div#autoresize-sl.uk-width-6-10 {
+		width: 60%;
+	}
+	div#autoresize-ct.uk-width-7-10 {
+		width: 70%;
+	}
+	p.auto-content-text {
+		color: #72b8d5;
+		font-family: 'Raleway';
+		font-size: 14.5px;
+		line-height: 35px;
+	}
+	p.consulting-text {
+		color: #ffffff;
+		font-family: 'Raleway';
+		font-size: 14.5px;
+		line-height: 40px;
+		margin-bottom: 50px;
+	}
+	p.column-text {
+	    color: #ffffff;
+	    font-family: "Raleway";
+	    font-size: 14px;
+	}
+	.footerMenu { display: block; }
+	.uk-transparent { display: block; }
+}
+
+/* START Dean Christian Armada's CSS */
+/* START Blog Page */
+
+
+#blogs{
+	margin-top:25px; color:#c3c3c3;
+}
+#blogs .blog-content h1{
+	margin-bottom:0px; margin-top: 0px; color:#097da9;
+}
+#blogs .blog-content h4{
+	margin-top:0px;
+	margin-bottom: 25px;
+	font-weight: 400;
+}
+#blogs .blog-content h4.blog-responsive-date{
+	display: none;
+}
+@media screen and (max-width: 1199px){
+	#blogs h4.blog-responsive-date{
+		display: none;
+	}
+	#blogs .blog-content h4.blog-responsive-date{
+		display: block;
+	}
+	#blogs h4.blog-responsive-author{
+		margin-bottom: 0px;
+	}
+}
+
+#blogs .blog-content p{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	line-height: 1.6;
+}
+#blogs img{
+	width:100%;
+}
+
+#blogs + footer{
+	border-top: 2px solid #00aeef;
+}
+/*#blogs a{
+	color: #c3c3c3;
+}*/
+/* END Blog Page */
+/* END Dean Christian Armada's CSS */

@@ -1,0 +1,467 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/uikit.docs.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+                <link href="{% static 'images/favico.png' %}" type="image/png" rel="icon">
+        <script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'js/uikit.min.js' %}"></script>
+        <script src="{% static 'js/components/accordion.min.js' %}"></script>
+        <link rel="stylesheet" src="{% static 'css/components/accordion.css' %}"></link>
+        <link rel="stylesheet" src="{% static 'css/components/sticky.min.css' %}"></link>
+        <script src="{% static 'js/components/sticky.min.js' %}"></script>
+        <script src="{% static 'js/components/slideshow.js' %}"></script>
+        <script src="{% static 'js/components/slideshow-fx.js' %}"></script>
+        <link rel="stylesheet" src="{% static 'css/components/notify.min.css' %}"></link>
+        <script src="{% static 'js/components/notify.js' %}"></script>
+        <script>
+        /*!
+		 * jquery.scrollto.js 0.0.1 - https://github.com/yckart/jquery.scrollto.js
+		 * Scroll smooth to any element in your DOM.
+		 *
+		 * Copyright (c) 2012 Yannick Albert (http://yckart.com)
+		 * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
+		 * 2013/02/17
+		 **/
+		$.scrollTo = $.fn.scrollTo = function(x, y, options){
+		    if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
+
+		    options = $.extend({}, {
+		        gap: {
+		            x: 0,
+		            y: 0
+		        },
+		        animation: {
+		            easing: 'swing',
+		            duration: 600,
+		            complete: $.noop,
+		            step: $.noop
+		        }
+		    }, options);
+
+		    return this.each(function(){
+		        var elem = $(this);
+		        elem.stop().animate({
+		            scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
+		            scrollTop: !isNaN(Number(y)) ? y : $(y).offset().top + options.gap.y
+		        }, options.animation);
+		    });
+		};
+	</script>
+	</head>
+	<title>Ai-Labs</title>
+    <body>	
+    <div id="home">
+    <header class="uk-sticky-placeholder" data-uk-sticky="{boundary:'#define-an-offset'}" style="margin: 0px;">
+	    <div class="uk-container uk-container-center">
+			<div class="uk-grid">
+			    <div class="uk-width-3-10"><img src="{% static 'images/ailabs.png' %}" alt="AI Labs" title="AI Labs" class="ailogo" /></div>
+			    <div class="uk-width-7-10">
+					<nav id="navLong" class="uk-navbar">
+						<ul class="uk-navbar-nav ui-text-small">
+							<li><a href="#home" class="active">HOME</a></li>
+							<li><a href="#aboutus">ABOUT US</a></li>
+							<li><a href="#homeautomation">HOME AUTOMATION</a></li> 
+							<li><a href="#consulting">CONSULTING</a></li>                 
+							<li><a href="#services">SERVICES</a></li>
+							<li><a href="#contactmenu">CONTACT US</a></li> 
+						</ul>
+					</nav>
+					<div id="navShort" class="uk-accordion" data-uk-accordion="{showfirst: false}">
+					    <nav id="navShortHumb" class="uk-navbar ui-text-small">
+					        <a href="#" class="uk-navbar-toggle uk-accordion-title"></a>
+					    </nav>
+					    
+					    <div id="mobileMenu" class="uk-navbar uk-accordion-content">
+					        <ul class="uk-nav">
+					            <li><a href="#home">HOME</a></li>
+								<li><a href="#aboutus">ABOUT US</a></li>
+								<li><a href="#homeautomation">HOME AUTOMATION</a></li> 
+								<li><a href="#consulting">CONSULTING</a></li>                 
+								<li><a href="#services">SERVICES</a></li>
+								<li><a href="#contactmenu">CONTACT US</a></li> 
+					        </ul>
+					    </div>  
+					</div>
+
+			    </div>
+			</div>
+	    </div>
+	</header>
+	<section class="dark-blue-section-01">
+		<div class="uk-slidenav-position" data-uk-slideshow="{autoplay:true}">
+			<ul class="uk-slideshow">
+				<li class="sliderImagesMobile">
+			        <img src="{% static 'images/DATA_CENTER_and_CLOUD_02.jpg' %}" class="slider1">
+			        <div class="uk-overlay-panel uk-flex uk-flex-left uk-flex-bottom uk-text-left">
+			       		<div class="margin-left-custome">
+			       			<div class="uk-transparent">
+	                            <h1 class="title-white">Data Center</h1> 
+								<p class="slider-text">•	Software Defined Networking</p>
+								<p class="slider-text">•	Software Defined Storage</p>
+								<p class="slider-text">•	Programmability and Automation</p> 
+								<p class="slider-text">•	Cloud Orchestration</p>
+								<h1 class="title-white">Security</h1>
+								<p class="slider-text">•	Firewall and VPN</p>
+								<p class="slider-text">•	IPS and WAF</p>
+								<p class="slider-text">•	Vulnerability and Penetration Testing</p>
+							</div>
+						</div>
+			        </div>
+			  	</li>
+			    <li class="sliderImagesMobile">
+					<img src="{% static 'images/BIG_DATA.jpg' %}" class="slider2">
+					<div class="uk-overlay-panel uk-flex uk-flex-left uk-flex-bottom uk-text-left">
+						<div class="margin-left-custome">
+							<div class="uk-transparent">
+	                            <h1 class="title-white">Web and Mobile Development</h1> 
+								<p class="slider-text">•	Portal for Enterprise & Mobile App</p>
+								<p class="slider-text">•	Customer Software Development</p>
+								<p class="slider-text">•	E-Commerce and Online Payment</p>
+								<p class="slider-text">•	Business Process Automation</p>
+	                            <h1 class="title-white">ERP, CRM, Big Data</h1>
+								<p class="slider-text">•	ERP and CRM Support, Admin & Monitoring</p>
+								<p class="slider-text">•	Business Intelligence</p>
+								<p class="slider-text">•	Real time Analytics</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="sliderImagesMobile">
+					<img src="{% static 'images/HOMEAUTO.jpg' %}" class="slider3">
+					<div class="uk-overlay-panel uk-flex uk-flex-left uk-flex-bottom uk-text-left">
+						<div class="margin-left-custome">
+							<div class="uk-transparent">
+	                            <h1 class="title-white">Internet of Things</h1> 
+								<p class="slider-text">•	Home Automation</p>
+								<p class="slider-text">•	Security Access and Controls</p>
+								<p class="slider-text">•	Smart Offices</p>
+								<p class="slider-text">•	Inventory Management</p>
+								<p class="slider-text">•	Next Gen Products and Appliances</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+		</div>
+	</section>
+	</div>
+	<!-- <section>
+		<div class="uk-container uk-container-center">
+			<div class="uk-width-7-10 uk-container-center uk-text-center uk-margin-large-top uk-margin-large-bottom">
+				<p class="header-text">WE ARE Ai LABS</p>
+				<h2 class="title-grey uk-margin-small-top">Your Technology, <i>YOUR</i> life.</h2>
+				<p class="header-content-text uk-margin-custom-top">Today's technologically dynamic world offers an infinite number of possibilities for your home, business, and daily lives. Ai-Labs is here to help you make those possibilities a reality: technology within your reach, working for you.</p>
+			</div>
+		</div>
+	</section> -->
+	<div id="aboutus">
+	<section class="lighter-blue-section-02">
+		<div class="uk-container uk-container-center">
+			<div class="uk-width-8-10 uk-container-center uk-text-center uk-margin-custom-slarge-top uk-margin-custom-slarge-bottom">
+				<h2 class="title-white uk-margin-large-top">ABOUT US</h2>
+				<p class="default-text uk-margin-custom-top">Ai-Labs knows that technology requirements for every business are unique, and which means 
+				that having the right IT support in place is very important. Whether you have 5 employees or 500, we can craft an IT management strategy 
+				that is right—and cost-effective—for your organization.</p>
+     
+    			<p class="default-text uk-margin-custom-top">Built on a tradition of delivery excellence, industry knowledge, and a strong technical team, 
+    			Ai-Labs was founded in 2014 by a group of Data Center and Security consultants/instructors, and software solution and SAP architects. 
+    			All employees and partners of Ai-Labs are specialists in their chosen fields, creating a team of highly focused experts.</p>
+     
+    			<p class="default-text uk-margin-custom-top">We are the only Company in the country who holds 4 different Cisco Certified Internetwork 
+    			Expert (CCIE) tracks – Routine and Switching, Security, Service Provider, and Data Center.</p> 
+     
+    			<p class="default-text uk-margin-custom-top">Ai-Labs offers unparalleled expertise and high-value professionalism, and our clients have experienced our dedication to delivering exceptional customer service. With Ai-Labs, you are sure that you are with the right people.</p>
+			</div>
+		</div>
+	</section>
+	</div>
+	<div id="homeautomation">
+	<section class="ai-homes-bg">
+		<div class="uk-container uk-container-center">
+			<div id="autoresize-ha" class="uk-width-6-10 uk-container-center uk-text-center uk-margin-custom-slarge-top uk-margin-custom-slarge-bottom">
+				<h2 class="title-white uk-margin-large-top">HOME AUTOMATION</h2>
+				<p class="auto-content-text uk-margin-custom-top">Control your home appliances…from the comfort of your mobile device. Access your TV, 
+				air conditioning units, and lighting systems: our expert team at Ai-Labs will make it possible. As part of the Internet of Things (IoT), 
+				your home is now almost literally a part of you.</p>
+     
+    			<p class="auto-content-text uk-margin-custom-top">We place a premium on the control and the ease of use. Each home is tailored to the owner’s specific needs.</p>
+     
+    			<p class="auto-content-text uk-margin-custom-top">Access to the IoT infrastructure is done from a personalized app that will be installed on the
+    			user’s tablet or mobile device. The ease of use and the accessibility of mobile devices makes it convenient to turn on all ten lights—or one lamp—in a single click.</p> 
+     
+    			<p class="auto-content-text uk-margin-custom-top">Living with technology just became more comfortable.</p>
+			</div>
+		</div>
+	</section>
+	</div>
+	<div id="consulting">
+	<section class="consulting-bg">
+		<div class="uk-container uk-container-center">
+			<div id="autoresize-ct" class="uk-width-7-10 uk-container-center uk-text-center uk-margin-custom-slarge-top uk-margin-custom-slarge-bottom">
+				<h2 class="title-white uk-margin-large-top">CONSULTING</h2>
+				<div class="uk-width-1-1">
+					<p class="consulting-text uk-margin-custom-top">Our team of experts at Ai-Labs will help you focus on your critical issues and opportunities 
+					in your organization, regardless of industry or geography.</p>
+
+
+					<p class="consulting-text uk-margin-custom-top">We are a Cisco Certified Internetwork Expert (CCIE)-certified consulting team that focuses 
+					on designing, and deployment of Data Center Technologies across multiple vendor technologies.</p>
+
+					<p class="consulting-text uk-margin-custom-top">Our team has extensive knowledge and certifications with the leading vendors, and we specialize
+				 	in a broad spectrum of technology platforms including: Cisco Application Centric Infrastructure (ACI), Cisco Nexus, Cisco UCS, Cisco 
+				 	MDS, VMware and Microsoft Hyper-V hypervisors. We also specialize in automating cloud infrastructure using open data center technologies 
+				 	such as Openstack, Docker, and Python.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="uk-container uk-container-center">
+			<img class="uk-border-circle" src="" alt="">
+		</div>
+	</section>
+	</div>
+	<div id="services">
+	<section class="lighter-blue-section-02">
+		<div class="uk-container uk-container-center uk-text-center">
+			<div class="uk-grid uk-margin-custom-large-top uk-margin-large-bottom">
+				<div class="uk-width-medium-1-3 uk-row-first">
+					<div class="uk-panel">
+						<img src="{% static 'images/services_data_center_and_security.png' %}" alt="" title="" />
+						<h3 class="title-white">DATA CENTER<br/>& SECURITY</h3>
+						<div class="uk-width-1-1 uk-margin-large-top uk-margin-large-bottom uk-text-justify">
+							<p class="column-text">Keeping your data center services secure, fast, and available is crucial for business success. 
+							Security breaches and multi-layer cyberattacks can result in lost productivity, missed opportunities, and higher costs for 
+							your organization. These harmful situations can also damage your organization’s reputation and deteriorate customer trust.</p>
+
+							<p class="column-text">Ai-Labs can provide DDoS protections services, simplify and unify access control, secure and 
+							accelerate remote access, and protect email—all while enhancing network and application performance. Your organization 
+							will have the tailored security it needs, and your users will enjoy the reliable, flexible access they demand. We focus on 
+							long term relationships with our clients to ensure they get the best security design, implementation and penetration test 
+							possible, offering them high-end, professional security audit services tailored to their needs. </p>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-medium-1-3 uk-row-first">
+					<div class="uk-panel">
+						<img src="{% static 'images/services_erp_and_big_data.png' %}" alt="" title="" />
+						<h3 class="title-white">ERP<br/>& BIG DATA</h3>
+						<div class="uk-width-1-1 uk-margin-large-top uk-margin-large-bottom uk-text-justify">
+							<p class="column-text">Ai-Labs provides expert assistance in undertaking studies and drawing up the precise roadmap best suited 
+							for your strategic and operational information technology requirements. Our expertise covers business modeling, data 
+							architecture, applications architecture and technical infrastructure.</p>
+
+							<p class="column-text">We provide planning, scoping, and implementation services for your Systems, Applications, and Products (SAP) 
+							enterprise solutions. Ai Labs uses the SAP-recommended methodology, Accelerated SAP (ASAP), in its implementation of SAP 
+							solutions. </p>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-medium-1-3 uk-row-first">
+					<div class="uk-panel">
+						<img src="{% static 'images/services_web_and_mobile.png' %}" alt="" title="" />
+						<h3 class="title-white">WEB<br/>& MOBILE</h3>
+						<div class="uk-width-1-1 uk-margin-large-top uk-margin-large-bottom uk-text-justify">
+							<p class="column-text">Ai-labs offers development of powerful, one-of-a-kind software intended to meet customers’ unique demands. 
+								Our skilled specialists know the game of business and deliver successful solutions that accord with all the specified requirements 
+								while invariably staying within time and budget limits. Along with full-cycle custom software development, we provide software maintenance 
+								and platform-based customization</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+	<div id="contactmenu">
+	<section>
+		<div class="uk-container uk-container-center uk-margin-large-top margin-bottom-custom">
+			<div class="uk-grid uk-margin-large-top uk-margin-small-bottom">
+				<div class="uk-width-medium-1-2 uk-row-first">
+					<h2 class="title-blue uk-text-center uk-margin-small-top">CONTACT US</h2>
+					<div id="contactus" class="uk-form uk-form-stacked">
+						<div class="uk-form-row">
+							<div class="uk-form-controls">
+								<input type="text" id="name" placeholder="Name *" class="uk-form-large uk-width-1-1">
+							</div>
+						</div>
+						<div class="uk-form-row">
+							<div class="uk-form-controls">
+								<input type="text" id="email" placeholder="Email Address  *" class="uk-form-large uk-width-1-1">
+							</div>
+						</div>
+						<div class="uk-form-row">
+							<div class="uk-form-controls">
+								<input type="text" id="phone" placeholder="Telephone Number  *" class="uk-form-large uk-width-1-1">
+							</div>
+						</div>
+                      	<div class="uk-form-row">
+							<div class="uk-form-controls">
+								<textarea id="message" cols="30" rows="5" placeholder="Message *" class="uk-form-large uk-width-1-1"></textarea>
+							</div>
+						</div>
+                      	<div class="uk-form-row">
+							<div class="uk-form-controls uk-text-center">
+								<button class="button" data-message="<i class='uk-icon-check'></i> Message with an icon...">SEND</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="uk-width-medium-1-2 uk-row-first">
+					<div class="uk-panel uk-width-7-10 uk-container-center margin-custom-top">
+						<h5 class="title-blue">Armada Innovation Labs Corp.</h2>
+						<p class="contact-content-text">
+							Level 10-1 One Global Place,
+							25th St. cor 5th Ave, BGC,
+							Taguig City 1632 Philippines</p>
+
+						<p class="contact-content-text uk-margin-small-top">
+							Office +63 2 2242053<br/>
+							Email info@ai-labs.co<br/>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+	<section class="lighter-blue-section-01">
+		<div id="autoresize-sl" class="uk-width-6-10 uk-container uk-container-center uk-text-center">
+			<div class="uk-grid social-wrapper">
+				<div class="uk-width-1-3 uk-row-first">
+					<div class="uk-panel uk-text-center">
+						<img src="{% static 'images/social_facebook.png' %}" alt="" title="" />
+					</div>
+				</div>
+				<div class="uk-width-1-3 uk-row-first">
+					<div class="uk-panel uk-text-center">
+						<img src="{% static 'images/social_twitter.png' %}" alt="" title="" />
+					</div>
+				</div>
+				<div class="uk-width-1-3 uk-row-first">
+					<div class="uk-panel uk-text-center">
+						<img src="{% static 'images/social_linkedin.png' %}" alt="" title="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="uk-container uk-container-center">
+			<div class="uk-width-8-10 uk-container-center uk-text-center margin-top-custom uk-margin-large-bottom">
+				<div class="footerMenu">
+					<a href="#home" class="nav-span">HOME</a>
+					<a href="#aboutus" class="nav-span">ABOUT US</a>
+					<a href="#homeautomation" class="nav-span">HOME AUTOMATION</a>
+					<a href="#consulting" class="nav-span">CONSULTING</a>                
+					<a href="#services" class="nav-span">SERVICES</a>
+					<a href="#contactmenu" class="nav-span">CONTACT US</a>
+				</div>
+				<div class="uk-width-1-1 uk-container-center uk-text-center uk-margin-small-top">
+					<p class="copyright-text">Copyright {% now "Y" %}. Ai Labs</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+    </body>
+</html>
+<script type="text/javascript">
+$(function() {
+	$('a[href*="#"]:not([href="#"])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+        	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        	if (target.length) {
+          		$('html, body').animate({
+            		scrollTop: target.offset().top
+          		}, 1000);
+          		return false;
+        	}
+      	}
+    });
+	
+	$.ajax({
+		type: "get",
+		url: "email.php?token=1",
+	   	success: function (data) {
+		}
+	});
+
+    $('.button').click(function() {
+		$.ajax({
+			type: "post",
+			url: "email.php",
+			data: { 
+				name: $( "#name" ).val(),
+				email: $( "#email" ).val(),
+				phone: $( "#phone" ).val(),
+				message: $( "#message" ).val()
+			},
+	        success: function (data) {
+	        	var obj = jQuery.parseJSON(data);
+	        	if(obj.success == 1){
+	        		UIkit.notify("<i class='uk-icon-check'></i> "+obj.message+"", {status:'success'});
+	        	}else{
+	        		UIkit.notify("<i class='uk-icon-remove'></i> "+obj.message+"", {status:'danger'});
+	        	}
+			}
+		});
+  	});
+
+        $('#mobileMenu ul li a').click(function() {
+		$( ".uk-navbar-toggle" ).trigger( "click" );
+  	});
+});
+</script>
+<script>
+  
+    $(document).ready(function(){
+
+        /**
+         * This part handles the highlighting functionality.
+         * We use the scroll functionality again, some array creation and 
+         * manipulation, class adding and class removing, and conditional testing
+         */
+        var aChildren = $("nav li").children(); // find the a children of the list items
+        var aArray = []; // create the empty aArray
+        for (var i=0; i < aChildren.length; i++) {    
+            var aChild = aChildren[i];
+            var ahref = $(aChild).attr('href');
+            aArray.push(ahref);
+        } // this for loop fills the aArray with attribute href values
+        
+        $(window).scroll(function(){
+            var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
+            var windowHeight = $(window).height(); // get the height of the window
+            var docHeight = $(document).height();
+            
+            for (var i=0; i < aArray.length; i++) {
+                var theID = aArray[i];
+                var divPos = $(theID).offset().top; // get the offset of the div from the top of page
+                var divHeight = $(theID).height(); // get the height of the div in question
+                if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+                    $("nav li a").blur();
+                    $("a[href='" + theID + "']").addClass("active");
+                } else {
+                    $("a[href='" + theID + "']").removeClass("active");
+                }
+            }
+            
+            if(windowPos + windowHeight == docHeight) {
+                if (!$("nav li:last-child a").hasClass("nav-active")) {
+                    var navActiveCurrent = $(".active").attr("href");
+                    $("a[href='" + navActiveCurrent + "']").removeClass("active");
+                    $("nav li:last-child a").addClass("active");
+                }
+            }
+        });
+    });
+
+</script>
