@@ -7,26 +7,45 @@
 
 {% block content %}
 <div id="blogs" class="container form-horizontal">
-	{% for item in items %}
-	<div class="form-group">
-		<div class="col-lg-offset-1 col-lg-2 text-right">
-			<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
-		</div>
-		<div class="col-lg-8 blog-content">
-			<h1>{{ item.title }}</h1>
-			<h4 class="blog-responsive-author"><i>{% if item.author %} By: {{ item.author }} {% endif %}</i></h4>
-			<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
-			<img src="/media/{{ item.photo }}">
-			<h4>
-				{{ item.listContent|safe }}
-			</h4>
-			<h4 class="text-right"><strong><i><a href="{% url 'blogs_item' slug=item.slug %}">Read more ></a></i></strong></h4>
-		</div>
-	</div>
+ 	{% for item in items %}
+		{% include 'blogs/blog.html' %}
 	{% endfor %}
 </div>
 {% endblock %}
 
 {% block footer_content %}
 	{% include 'blogs/footer.html' %}
+{% endblock %}
+
+{% block inline_js %}
+	<div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-body">
+	                <img src="" alt="" />
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var $lightbox = $('#lightbox');
+	    
+	    $('[data-target="#lightbox"]').on('click', function(event) {
+	        var $img = $(this).find('img'), 
+	            src = $img.attr('src'),
+	            alt = $img.attr('alt')
+	            ;
+
+	        $lightbox.find('img').attr('src', src);
+	        $lightbox.find('img').attr('alt', alt);
+	    });
+	    
+	    $lightbox.on('shown.bs.modal', function (e) {
+	        var $img = $lightbox.find('img');
+	            
+
+	    });
+		});
+	</script>
 {% endblock %}

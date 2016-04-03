@@ -1,29 +1,23 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block header_content %}
-	{% include 'blogs/nav.html' %}
-{% endblock %}
-
-{% block content %}
-<div id="blogs" class="container form-horizontal">
-	<div class="form-group">
-		<div class="col-lg-offset-1 col-lg-2 text-right">
-			<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
+<div class="form-group">
+	<div class="col-lg-offset-1 col-lg-2 text-right">
+		<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
+	</div>
+	<div class="col-lg-8 blog-content">
+		<h1>{{ item.title }}</h1>
+		<h4 class="blog-responsive-author"><i>{% if item.author %} By: {{ item.author }} {% endif %}</i></h4>
+		<h4 class="blog-responsive-date"><i>{{ item.date_published|date }}</i></h4>
+		<div class="img-container">
+			{{ item.photos }}
 		</div>
-		<div class="col-lg-8 blog-content">
-			<h1>{{ item.title }}</h1>
-			<h4><i>{% if item.author %} By: {{ item.author }} {% endif %}</i></h4>
-			<!-- <h4><i>Date: {{ item.date_published|date }}</i></h4> -->
-			<img src="/media/{{ item.photo }}">
-			<h4>
+		<h4>
+			{% if items %} 
+				{{ item.listContent|safe }}
+			{% else %}
 				{{ item.content|safe }}
-			</h4>
-		</div>
+			{% endif %}
+		</h4>
+		{% if items %} 
+			<h4 class="text-right"><strong><i><a href="{% url 'blogs_item' slug=item.slug %}">Read more ></a></i></strong></h4>
+		{% endif %}
 	</div>
 </div>
-{% endblock %}
-
-{% block footer_content %}
-	{% include 'blogs/footer.html' %}
-{% endblock %}

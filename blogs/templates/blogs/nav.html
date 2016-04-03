@@ -1,11 +1,15 @@
 {% load static %}
 
-<header class="uk-sticky-placeholder" data-uk-sticky="{boundary:'#define-an-offset'}" style="margin: 0px;">
+<header class="uk-sticky-placeholder blogs" data-uk-sticky="{boundary:'#define-an-offset'}" style="margin: 0px;">
     <div class="uk-container uk-container-center">
 		<div class="uk-grid">
 		    <div class="uk-width-3-10"><a href="{% url 'home' %}"><img src="{% static 'images/ailabs.png' %}" alt="AI Labs" title="AI Labs" class="ailogo" /></a></div>
 		    <div class="uk-width-7-10">
-				
+				<nav id="navLong" class="uk-navbar pull-right">
+					<ul class="uk-navbar-nav ui-text-small">
+						<li><a href="#blogs" class="active">BLOGS</a></li>
+					</ul>
+				</nav>
 				<div id="navShort" class="uk-accordion" data-uk-accordion="{showfirst: false}">
 				    <nav id="navShortHumb" class="uk-navbar pull-right">
 							<ul class="uk-navbar-nav ui-text-small">

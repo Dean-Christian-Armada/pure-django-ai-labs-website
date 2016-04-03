@@ -5,6 +5,9 @@ from ckeditor.widgets import CKEditorWidget
 
 from . models import *
 
+class BlogPhotoInline(admin.TabularInline):
+    model = BlogPhoto
+
 class BlogAdminForm(forms.ModelForm):
 	content = forms.CharField(widget=CKEditorWidget())
 	class Meta:
@@ -16,6 +19,9 @@ class BlogAdmin(admin.ModelAdmin):
 	list_display = ('title', 'date_added', 'date_published', 'date_unpublished', 'published')
 	list_filter = ('date_added', 'date_published', 'date_unpublished', 'published')
 	list_editable = ('published',)
+	inlines = [
+		BlogPhotoInline
+	]
 
 # Register your models here.
 admin.site.register(Category)

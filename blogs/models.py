@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.template.defaultfilters import slugify
+from django.utils.safestring import mark_safe
 from django.db import models
 
 import datetime
@@ -20,7 +21,7 @@ class Blog(models.Model):
 	author = models.CharField(max_length=100, null=True, blank=True, default=None)
 	# COMPLETE
 	slug = models.SlugField(null=True, blank=True, unique=True,  default=None, editable=False)
-	photo = models.ImageField(upload_to='blogs', blank=True, default=None)
+	# photo = models.ImageField(upload_to='blogs', blank=True, default=None)
 	content = models.TextField(default=None)
 	published = models.BooleanField(default=True)
 	date_added = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -45,3 +46,16 @@ class Blog(models.Model):
 			return content[:count]+"..."
 		else:
 			return self.content
+
+	def photos(self):
+		x = BlogPhoto.objects.filter(blog=self.id)
+		z = ["<a data-toggle='modal' data-target='#lightbox'> <img src='"+s.photo.url+"' class='img-thumbnail'></a>"  for s in x]
+		return mark_safe("".join(z))
+
+
+class BlogPhoto(models.Model):
+	blog = models.ForeignKey(Blog)
+	photo = models.ImageField(upload_to='blogs', blank=True, default=None)
+
+	def __str__(self):
+		return self.blog.title
