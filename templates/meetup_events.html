@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_content %}
+  	<div id="home">
+  		<header class="uk-sticky-placeholder" data-uk-sticky="{boundary:'#define-an-offset'}" style="margin: 0px;">
+		    <div class="uk-container uk-container-center">
+				<div class="uk-grid">
+				    <div class="uk-width-3-10"><a href="{% url 'home' %}"><img src="{% static 'images/ailabs.png' %}" alt="AI Labs" title="AI Labs" class="ailogo" /></a></div>
+				</div>
+		    </div>
+		</header>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<center><img src="https://res.cloudinary.com/ai-labs-co/image/upload/v1506265562/meetup_events/10-06-2017.jpg" alt="" title="" /></center>
+{% endblock %}
+
+{% block footer_content %}
+	<div class="uk-width-1-1 uk-container-center uk-text-center uk-margin-large-top">
+		<p class="copyright-text"><strong>Copyright {% now "Y" %}. Ai Labs</strong></p>
+	</div>
+{% endblock %}
