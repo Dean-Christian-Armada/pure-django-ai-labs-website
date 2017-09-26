@@ -61,8 +61,8 @@ def email(request):
                 msg_html = render_to_string(
                     'email/contact-form.html', email_data)
                 emails = ['sales@ai-labs.co', 'jabonete1771@gmail.com']
-                send_mail(title, '', settings.EMAIL_HOST_USER, [
-                          emails], fail_silently=False, html_message=msg_html)
+                send_mail(title, '', settings.EMAIL_HOST_USER, emails,
+                          fail_silently=False, html_message=msg_html)
     else:
         return HttpResponseForbidden()
 
