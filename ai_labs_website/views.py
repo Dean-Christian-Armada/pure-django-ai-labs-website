@@ -1,7 +1,7 @@
 from django.core.validators import validate_email
 from django.template.loader import render_to_string
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseForbidden
 from django.conf import settings
 
 try:
@@ -25,10 +25,10 @@ def email(request):
         _request = request.POST
         json = {}
 
-        name = _request['name']
-        email = _request['email']
-        phone = _request['phone']
-        message = _request['message']
+        name = _request.get('name')
+        email = _request.get('email')
+        phone = _request.get('phone')
+        content_msg = _request.get('message')
 
         if not name:
             message = 'Name is required.'
@@ -47,26 +47,24 @@ def email(request):
                 message = 'Phone is required.'
             elif len(phone) < 7:
                 message = 'Phone must be atleast 7 character.'
-            elif not message:
+            elif not content_msg:
                 message = 'Message is required'
             else:
                 success = 1
-                message = 'Inquiry has been send. Our Administrator will be in touch.'
+                title = 'Inquiry has been send. Our Administrator will be in touch.'
+                message = title
                 email_data = {}
                 email_data['name'] = name
                 email_data['email'] = email
                 email_data['phone'] = phone
-                email_data['message'] = message
+                email_data['message'] = content_msg
                 msg_html = render_to_string(
                     'email/contact-form.html', email_data)
-                # The email below is the original and should be the one being sent by an email
-                # emails = ["info@ai-labs.co, sales@ai-labs.co, jabonete1771@gmail.com"]
-                # emails = email
-                emails = "armadadean@yahoo.com"
-
-                # settings.EMAIL_HOST_USER si currently deanarmada@gmail.com set at the settings.py
-                send_mail("Sample Email Title", '', settings.EMAIL_HOST_USER, [
+                emails = ['sales@ai-labs.co', 'jabonete1771@gmail.com']
+                send_mail(title, '', settings.EMAIL_HOST_USER, [
                           emails], fail_silently=False, html_message=msg_html)
+    else:
+        return HttpResponseForbidden()
 
     json['success'] = success
     json['message'] = message
